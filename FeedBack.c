@@ -3,8 +3,7 @@
 #include <string.h>
 
 //===================STRUCT=======================//
-struct paciente
-{
+struct paciente {
   int codigo;
   char nome[30];
   char SETOR[14];
@@ -13,8 +12,7 @@ struct paciente
   char NReclamacao[200];
 };
 
-int main()
-{
+int main() {
 
   //===================STRUCT=======================//
   struct paciente cad[99];
@@ -29,101 +27,19 @@ int main()
   i = 0;
   cont = 0;
 
-  //====================FUNÇAO================//
-  void cadastro()
-  {
-    cont = cont + 1;
-    for (i = 0; i < cont; i++)
-      ;
-    {
-      printf("O codigo da reclamacao e: %d\n", --i);
-
-      printf("Digite o seu nome: ");
-      gets(cad[i].nome);
-      fflush(stdin);
-      printf("Digite o SETOR do paciente: ");
-      gets(cad[i].SETOR);
-      fflush(stdin);
-      printf("Digite qual a sua reclamacao: ");
-      gets(cad[i].reclamacao);
-      fflush(stdin);
-      printf("Digite a data: ");
-      gets(cad[i].data);
-      fflush(stdin);
-      printf("Digite o numero da reclamacao: ");
-      gets(cad[i].NReclamacao);
-      fflush(stdin);
-      printf("\n\n");
-    }
-  }
-
-  //====================FUNÇAO================//
-  void relatorio()
-  {
-    for (i = 0; i < cont; i++)
-    {
-      printf("\nCódigo: %d\n", i);
-      printf("Nome: %s\n", cad[i].nome);
-      printf("SETOR: %s\n", cad[i].SETOR);
-      printf("reclamacao: %s\n", cad[i].reclamacao);
-      printf("Data: %s\n", cad[i].data);
-      printf("Numero da reclamacao: %d\n", cad[i].NReclamacao);
-      printf("========================================");
-    }
-  }
-  //====================FUNÇAO================//
-  void buscaCODIGO()
-  {
-    printf("Digite o CODIGO que deseja buscar: ");
-    gets(busca);
-    fflush(stdin);
-
-    for (i = 0; i < cont;)
-    {
-
-      acha = strcmp(busca, cad[i].NReclamacao);
-
-      if ((acha == 0) && (i < cont))
-      {
-        system("cls");
-        printf("Código: %d\n", i);
-        printf("Nome: %s\n", cad[i].nome);
-        printf("SETOR: %s\n", cad[i].SETOR);
-        printf("reclamacao: %s\n", cad[i].reclamacao);
-        printf("Data: %s\n", cad[i].data);
-        printf("Numero da reclamacao: %d\n", cad[i].NReclamacao);
-        i = cont;
-      }
-
-      else
-      {
-        system("cls");
-        printf("\n Reclamacao nao encontrada");
-        i = i + 1;
-      }
-    }
-  }
-  //====================FUNÇAO================//
-  void escolhas()
-  {
-    printf("\n\n");
-    printf("Para voltar pressione ENTER\n");
-    getchar();
-  }
-
   //====================INICIO==============//
 
 INICIO:
 
-  system("cls");
+  system("clear");
+
 
   printf("==================================");
   printf("BEM-VINDO AO PROGRAMA DE FEEDBACK DA CPTM!");
   printf("==================================");
   printf("\n\n");
 
-  do
-  {
+  do {
 
     printf("Por favor, selecione o numero para o que voce deseja fazer:\n");
     printf(" 1 - Cadastrar reclamacao \n");
@@ -135,12 +51,33 @@ INICIO:
 
     scanf("%d", &op);
     fflush(stdin);
-    switch (op)
-    {
+    switch (op) {
     case 1:
     CASE1:
-      system("cls");
-      cadastro();
+      system("clear");
+      cont = cont + 1;
+      for (i = 0; i < cont; i++)
+        ;
+      {
+        printf("O codigo da reclamacao e: %d\n", --i);
+
+        printf("Digite o seu nome: ");
+        gets(cad[i].nome);
+        fflush(stdin);
+        printf("Digite o SETOR do paciente: ");
+        gets(cad[i].SETOR);
+        fflush(stdin);
+        printf("Digite qual a sua reclamacao: ");
+        gets(cad[i].reclamacao);
+        fflush(stdin);
+        printf("Digite a data: ");
+        gets(cad[i].data);
+        fflush(stdin);
+        printf("Digite o numero da reclamacao: ");
+        gets(cad[i].NReclamacao);
+        fflush(stdin);
+        printf("\n\n");
+      }
 
     ESCOLHA:
       printf("Voce deseja cadastrar mais pacientes?\n");
@@ -148,17 +85,12 @@ INICIO:
       printf("2 - Retornar ao menu principal\n");
       scanf("%d", &op);
       fflush(stdin);
-      if (op == 1)
-      {
+      if (op == 1) {
         goto CASE1;
-      }
-      else if (op == 2)
-      {
+      } else if (op == 2) {
         goto INICIO;
-      }
-      else
-      {
-        system("cls");
+      } else {
+        system("clear");
         printf("\nOpcao invalida por favor digite novamente:\n\n");
 
         goto ESCOLHA;
@@ -166,36 +98,73 @@ INICIO:
       break;
 
     case 2:
-      system("cls");
-      relatorio();
+      system("clear");
+      for (i = 0; i < cont; i++) {
+        printf("\nCódigo: %d\n", i);
+        printf("Nome: %s\n", cad[i].nome);
+        printf("SETOR: %s\n", cad[i].SETOR);
+        printf("reclamacao: %s\n", cad[i].reclamacao);
+        printf("Data: %s\n", cad[i].data);
+        printf("Numero da reclamacao: %d\n", cad[i].NReclamacao);
+        printf("========================================");
+      }
 
       //====================ESCOLHAS===================//
-      escolhas();
-      system("cls");
+      printf("\n\n");
+      printf("Para voltar pressione ENTER\n");
+      getchar();
+      system("clear");
 
       goto INICIO;
 
       // printf("pinto");
       break;
     case 3:
-      system("cls");
-      buscaCODIGO();
+      system("clear");
+      printf("Digite o CODIGO que deseja buscar: ");
+      gets(busca);
+      fflush(stdin);
+
+      for (i = 0; i < cont;) {
+
+        acha = strcmp(busca, cad[i].NReclamacao);
+
+        if ((acha == 0) && (i < cont)) {
+          system("clear");
+          printf("Código: %d\n", i);
+          printf("Nome: %s\n", cad[i].nome);
+          printf("SETOR: %s\n", cad[i].SETOR);
+          printf("reclamacao: %s\n", cad[i].reclamacao);
+          printf("Data: %s\n", cad[i].data);
+          printf("Numero da reclamacao: %d\n", cad[i].NReclamacao);
+          i = cont;
+        }
+
+        else {
+          system("clear");
+          printf("\n Reclamacao nao encontrada");
+          i = i + 1;
+        }
+      }
 
       //====================ESCOLHAS===================//
-      escolhas();
-      system("cls");
+      printf("\n\n");
+      printf("Para voltar pressione ENTER\n");
+      getchar();
+      system("clear");
       goto INICIO;
 
       // ("calca");
       break;
     case 4:
-      system("cls");
-      printf("cagado");
+      system("clear");
+      printf("Viii!! ta me devendo uma coxinha XD\n (PS... Isso representa o "
+             "programa fechado)");
       break;
 
     default:
-      system("cls");
-      printf("Opcao invalida por favor digite novamente:\n\n");
+      system("clear");
+      printf("Opcao invalida, por favor digite novamente:\n\n");
       break;
     }
 
