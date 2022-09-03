@@ -143,7 +143,7 @@ INICIO:
       cadastro();
 
     ESCOLHA:
-      printf("Voce deseja cadastrar mais pacientes?\n");
+      printf("Voce deseja adicionar outra reclamacao?\n");
       printf("1 - Sim\n");
       printf("2 - Retornar ao menu principal\n");
       scanf("%d", &op);
