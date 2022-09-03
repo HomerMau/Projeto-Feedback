@@ -51,7 +51,7 @@ int main()
       gets(cad[i].data);
       fflush(stdin);
       printf("Digite o seu setor: ");
-      scanf("%d", &cad[i].setor);
+      gets(cad[i].setor);
       fflush(stdin);
       printf("\n\n");
     }
@@ -67,7 +67,7 @@ int main()
       printf("CPF: %s\n", cad[i].CPF);
       printf("Reclamacao: %s\n", cad[i].reclamacao);
       printf("Data: %s\n", cad[i].data);
-      printf("Setor: %d\n", cad[i].setor);
+      printf("Setor: %s\n", cad[i].setor);
       printf("========================================");
     }
   }
@@ -91,7 +91,7 @@ int main()
         printf("CPF: %s\n", cad[i].CPF);
         printf("Reclamacao: %s\n", cad[i].reclamacao);
         printf("Data: %s\n", cad[i].data);
-        printf("Setor: %d\n", cad[i].setor);
+        printf("Setor: %s\n", cad[i].setor);
         i = cont;
       }
 
