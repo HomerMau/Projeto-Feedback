@@ -85,7 +85,7 @@ int main()
 
       if ((acha == 0) && (i < cont))
       {
-        system("clean");
+        system("clear");
         printf("Codigo: %d\n", i);
         printf("Nome: %s\n", cad[i].nome);
         printf("CPF: %s\n", cad[i].CPF);
@@ -97,7 +97,7 @@ int main()
 
       else
       {
-        system("clean");
+        system("clear");
         printf("\n CPF nao encontrado");
         i = i + 1;
       }
@@ -115,7 +115,7 @@ int main()
 
 INICIO:
 
-  system("clean");
+  system("clear");
 
   printf("==================================");
   printf("BEM-VINDO AO PROGRAMA DE FEEDBACK DA CPTM!!!");
@@ -139,7 +139,7 @@ INICIO:
     {
     case 1:
     CASE1:
-      system("clean");
+      system("clear");
       cadastro();
 
     ESCOLHA:
@@ -158,7 +158,7 @@ INICIO:
       }
       else
       {
-        system("clean");
+        system("clear");
         printf("\nOpcao invalida por favor digite novamente:\n\n");
 
         goto ESCOLHA;
@@ -166,35 +166,35 @@ INICIO:
       break;
 
     case 2:
-      system("clean");
+      system("clear");
       relatorio();
 
       //====================ESCOLHAS===================//
       escolhas();
-      system("clean");
+      system("clear");
 
       goto INICIO;
 
       // printf("pinto");
       break;
     case 3:
-      system("clean");
+      system("clear");
       buscaCPF();
 
       //====================ESCOLHAS===================//
       escolhas();
-      system("clean");
+      system("clear");
       goto INICIO;
 
       // ("calca");
       break;
     case 4:
-      system("clean");
+      system("clear");
       printf("Viii!! ta me devendo uma coxinha XD\n (PS... Isso representa o programa fechado)");
       break;
 
     default:
-      system("clean");
+      system("clear");
       printf("Opcao invalida por favor digite novamente:\n\n");
       break;
     }
